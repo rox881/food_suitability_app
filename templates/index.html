@@ -78,6 +78,25 @@
             text-align: center;
             font-weight: 600;
         }
+
+        /* 🔹 New: Category help box */
+        .category-hint {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f3f5;
+            border-radius: 4px;
+            font-size: 12.5px;
+            color: #555;
+        }
+
+        .category-hint ul {
+            padding-left: 18px;
+            margin: 6px 0;
+        }
+
+        .category-hint li {
+            margin-bottom: 4px;
+        }
     </style>
 </head>
 
@@ -102,6 +121,25 @@
             <label>Food Name:</label>
             <input type="text" name="food"
                    value="{{ request.form.food or '' }}" required>
+
+            <!-- 🔹 Category suggestion -->
+            <div class="category-hint">
+                <strong>Supported food categories (examples):</strong>
+                <ul>
+                    <li><b>Fruits:</b> apple, banana, mango</li>
+                    <li><b>Vegetables:</b> spinach, carrot, broccoli</li>
+                    <li><b>Grains:</b> rice, roti, bread, oats</li>
+                    <li><b>Dairy:</b> milk, cheese, curd, paneer</li>
+                    <li><b>Meat / Protein:</b> chicken, fish, egg</li>
+                    <li><b>Fast Food:</b> pizza, burger, fries</li>
+                    <li><b>Fried Items:</b> fried chicken, samosa</li>
+                    <li><b>Sweets:</b> cake, chocolate, ice cream</li>
+                    <li><b>Beverages:</b> juice, cola, soda</li>
+                </ul>
+                <small>
+                    Note: If an exact food is not found, the system evaluates it using its category.
+                </small>
+            </div>
 
             <button type="submit">Check</button>
         </form>
